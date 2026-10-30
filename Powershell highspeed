@@ -1,0 +1,9 @@
+
+$path = $PWD.Path
+while ($true) {
+    # Generates multiple random folders simultaneously per iteration
+    1..50 | ForEach-Object -Parallel {
+        $randName = [Guid]::NewGuid().ToString()
+        [System.IO.Directory]::CreateDirectory("$using:path\$randName") | Out-Null
+    } -ThrottleLimit 50
+}
